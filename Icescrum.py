@@ -157,15 +157,9 @@ if __name__=="__main__":
 		link = MySqlAccess(host="projet.sudokeys.com",db_name="icescrum",pwd="37pefhx",un="root",port=3307)
 		icescum = Icescrum(link)
 		icescum.printProjects()
+		ref=raw_input("Type the number of the project to import in : ")
+		icescum.setProject(ref)	
 		
-		try:
-			ref=raw_input("Type the number of the project to import in : ")
-		except Exception as ex:
-			print "Error reading project number : ", ex
-		else:
-			icescum.setProject(ref)	
-		
-		#fileToParse="/Users/William/Documents/workspace_python/Icescrum/fileToParseSimple.csv"
 		fileToParse="./fileToParse.csv"
 		reader=None
 		try:
@@ -178,15 +172,11 @@ if __name__=="__main__":
 			reader.printFeatures()
 			fileStream.close()
 		
-		try:
-			ok=raw_input("Would you like to continue, just see what will happen, or abort ? [yes/see/no] ")
-		except Exception as ex:
-			print "Error reading your choice : ", ex
-		else:
-			if reader and ok in ("yes","see"):
-				if ok == "yes":
-					link.REAL_COMMIT=True
-				icescum.writeFeatures(reader)
+		ok=raw_input("Would you like to continue, just see what will happen, or abort ? [yes/see/no] ")
+		if reader and ok in ("yes","see"):
+			if ok == "yes":
+				link.REAL_COMMIT=True
+			icescum.writeFeatures(reader)
 	except Exception as ex:
 		print "Error : ",ex
 	finally:
