@@ -53,6 +53,7 @@ class MySqlAccess:
 		self.DB_PORT=port
 		self.DB_CONN=""
 		self.DB_CUR=""
+		self.REAL_COMMIT=False
 
 	def connect(self):
 		print "Connecting database %s ..." % (self.DB_NAME)
@@ -74,7 +75,8 @@ class MySqlAccess:
 		if not self.DB_CUR and self.DB_CONN:
 			self.DB_CUR=self.DB_CONN.cursor()
 		ret=self.DB_CUR.execute(request)
-#		self.DB_CONN.commit()
+		if self.REAL_COMMIT:
+			self.DB_CONN.commit()
 		return ret
 		
 	def close(self):
@@ -177,11 +179,13 @@ if __name__=="__main__":
 			fileStream.close()
 		
 		try:
-			ok=raw_input("Would you like to continue ? [y/n] ")
+			ok=raw_input("Would you like to continue, just see what will happen, or abort ? [yes/see/no] ")
 		except Exception as ex:
 			print "Error reading your choice : ", ex
 		else:
-			if ok in ("y","Y") and reader:
+			if reader and ok in ("yes","see"):
+				if ok == "yes":
+					link.REAL_COMMIT=True
 				icescum.writeFeatures(reader)
 	except Exception as ex:
 		print "Error : ",ex
