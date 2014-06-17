@@ -38,6 +38,7 @@ class StoriesReader:
 		sortedList.sort()
 		for k in sortedList:
 			print "|Feature || Story| : |%s || %s| " % (k[0],k[1])
+		print "Total lines to write : %s" % len(sortedList)
 
 
 
@@ -135,6 +136,8 @@ class Icescrum:
 		sortedList.sort()
 		lastWriteFeature=""
 		lastInsertedId=0
+		featuresCpt=0
+		storiesCpt=0
 		for k in sortedList:
 			if(lastWriteFeature!=k[0]):
 				req = "INSERT INTO icescrum.icescrum2_feature(name,uid,backlog_id,version,color,creation_date,date_created,last_updated,rank,type,value) VALUES(\"%s\",%s,%s,0,\"blue\",NOW(),NOW(),NOW(),%s,0,0)" % (k[0],lastFeatureUid,self.PROJ_REF,lastFeatureUid)
@@ -143,12 +146,14 @@ class Icescrum:
 				if ret:
 					lastInsertedId = int(ret[0][0])
 					print "last inserted id : %s" % (lastInsertedId)
-					
+				featuresCpt+=1	
 				lastFeatureUid = lastFeatureUid + 1
 			lastWriteFeature=k[0]
 			req = """INSERT INTO icescrum.icescrum2_story(name,uid,description,feature_id,backlog_id,version,creator_id,creation_date,date_created,execution_frequency,last_updated,rank,state,type,value) VALUES(\"%s\",%s,\"%s\",%s,%s,0,%s,NOW(),NOW(),1,NOW(),%s,1,0,0)""" % (k[1],lastStoryUid,reader.dicoStoryDescription[(k[0],k[1])],lastInsertedId,self.PROJ_REF,Icescrum.IMPORT_USER_ID,lastStoryUid)
 			ret = self.DB_LINK.execute_insert(req)
+			storiesCpt+=1
 			lastStoryUid = lastStoryUid + 1
+		print "-------------------------\n %s features inserted\n %s stories inserted\n-------------------------\n" % (featuresCpt,storiesCpt)
 		
 
 if __name__=="__main__":
