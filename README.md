@@ -11,6 +11,7 @@ The "Import CSV" user must exists on Icescrum and must be added to the project.
 This user is considered to have the ID 40. (IMPORT_USER_ID)
 The file to import must be : 
  - in CSV format (separator : ',', delimiter '"')
+ - encoded in the same charset as icescrum database (latin-1 (ISO8859-1))
  - called "fileToParse.csv"
  - in root directory of this script
  
