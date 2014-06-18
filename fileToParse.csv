@@ -1,73 +1,93 @@
-Feature,Story,Type,Description,Modules,Couverture,"Licence Module","Analyse fonctionnelle",,,,,,,"Analyse technique",,,,,,,Charge,
-,,,,,,,Rapports,,,Processus,,Ecrans,,Workflows,,,,,Wizards,,,
-,,,,,,,"Rapport de base","RÃ©fÃ©rentiel de donnÃ©es","CrÃ©ation du rapport",Base,AvancÃ©,Base,AvancÃ©,Base,AvancÃ©,"Droits d'accÃ¨s (groupes)",Objets,"Champs calculÃ©s",Base,AvancÃ©,,
-"Gestion de projet / contrat","DÃ©finir un projet (et ses sous projets)",Utilisateur,"Un projet est caractÃ©risÃ© parÂ :
-Client, Identification projet, Commercial Chasse, Chef de projet, Date de Mise en Production Initiale, Date rÃ©elle de mise en Production, Mode de facturation,DurÃ©e de la pÃ©riode d'essai,Type de reconduction,Nombre de pages vues (base propal), Nombre de pages actualisÃ©es, Nombre d'utilisateurs, CoÃ»t de l'utilisateur sup, Nombre d'heure de call ( base propal), Nombre d'heure de call rÃ©actualisÃ©, Nombre de contact call, Nombre de contact video.","Projet ","0,6",,,,,,,5,,,,1,2,,,,8,
-"Gestion de projet / contrat","Attribution de tÃ¢ches (prestations et abonnements)",Utilisateur,"Les tÃ¢ches d'un projet (ou lignes du contrat) sont des prestations, facturÃ©es au forfait (montant, durÃ©e, temps) ou des abonnements (montant, durÃ©e)",Projet/TÃ¢che,"0,5",,,,,,,4,,,,,2,,,,6,
-"Gestion de projet / contrat","Pointage (Ã  postÃ©riori) et chronomÃ©trage  (en temps rÃ©el) des temps passÃ©s",Utilisateur,"Les temps passÃ©s par taches sont chronomÃ©trÃ©s et dÃ©comptÃ©s en temps rÃ©el et peuvent aussi Ãªtre saisis Ã  postÃ©riori.","Projet/TÃ¢che
-",0,,,,,,,2,,,,,9,,,,11,
-"Gestion de projet / contrat","Attachement des charges et frais du projet",Utilisateur,"Des notes de frais et autres charges peuvent Ãªtre associÃ©es au projet.",,,,,,,,,2,,,,,,,,,2,
-"Gestion de projet / contrat","Planification et attribution des ressources",Utilisateur,"Un utilisateur dÃ©cide de l'attribution d'un projet Ã  une ressource en particulier (fonction du porte feuille et de l'Ã©tat d'avancement de cette derniÃ¨re)",Projet,1,,,,,,,,,,,,,,,,0,
-"Gestion de projet / contrat","Adapter les statuts d'avancement de la vue Kanban (tÃ¢ches/projet)",Utilisateur,"Reprendre les statuts de KickOff, Setup, FollowUp... ET Â«Â en attente retour clientÂ Â» (voir Ã  quel endroits)",Projet,"0,7",,,,,,,"1,5",,,,,,,,,"1,5",
-"Gestion de projet / contrat","Historiser les changements de status",Utilisateur,"Quel PM a changÃ© quel status de projet et quand",Projet,0,,,,,,,2,,,,,2,,,,4,
-"Gestion de projet / contrat","GÃ©rÃ©r les reconductions/rÃ©siliations",Utilisateur,"GÃ©rer les dates et status (Ã  renouveller, Ã  (re) facturer (l'abonnement)...). Ne re facturer que l'abonnement. Taguer le contrat comme Â«Â renouvellementÂ Â» (impact su le commissionnement)",Contrat,0,,,,,,,2,,,,,2,,,,4,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des prestations","Gestion des variantes (setup, formation, graphique...)",Utilisateur,"Articles de type service avec montant fonction du temps passÃ©, identifiÃ©s par un tag. Ils font l'objet d'un pointage du temps passÃ©.",Sale,1,,,,,,,2,,,,,,,,,2,
-"Gestion des prestations","Gestion de la prestation de type Â«Â suiviÂ Â»",,"C'est une prestation ponctuelle et mensualisÃ©e, identifiÃ©e par un tag. Elle fera aussi l'objet d'un pointage du temps passÃ©",Projet,1,,,,,,,,,,,,1,,,,1,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion de contrat","Mettre Ã  jours les tÃ¢ches de projets en fonction des lignes du contrat",Utilisateur,"Faire le lien entre les prestations vendues dans le contrat et les projets/tÃ¢ches qui en rÃ©sultent. (reprendre les temps estimÃ©s de la prestation dans la tÃ¢che du projet)",Contrat,0,,,,,,,3,,,,,,,,,3,
-"Gestion de contrat","Adapter les statuts d'avancement",Utilisateur,"Nouveau, attente validation (IBAN), en cours, Ã  renouveler, terminÃ©",Contrat,0,,,,,5,,,,,,,,,,,5,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des abonnements","Gestion des variantes (call, tchat, video, suivi..)",Utilisateur,"Articles de type abonnement avec liste de prix selon nombres de pages et utilisateurs. (ExempleÂ : abonnement Â«Â entreprise callÂ Â» pour 500 pages vues.) IdentifiÃ© par un tag",Produit,"0,7",,,,,,,5,,,,,,,,,5,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des ventes","GÃ©nÃ©rer le contrat lors de la confirmation de vente",Utilisateur,"CrÃ©er le contrat liÃ© lors de la confirmation d'une vente. Reprendre les articles vendus (prestation + abonnement)",Sale,0,,,,,4,,,,,,1,,,2,,7,
-"Gestion des ventes","GÃ©nÃ©rer le projet lors de la confirmation de vente",Utilisateur,"CrÃ©er le projet liÃ© lors de la confirmation d'une vente. Reprendre les articles vendus (prestation + abonnement) sous forme de tÃ¢ches.",Sale,0,,,,,4,,,,,,,,,,,4,
-"Gestion des ventes","Edition du bon de commande",Utilisateur,,Sale,"0,3",,6,,,,,,,,,,,,,,6,
-"Gestion des ventes","Edition de la facture",Utilisateur,,Sale,"0,3",,6,,,,,,,,,,,,,,6,
-"Gestion des ventes","Attribuer des objectifs de vente",Utilisateur,"Attribuer des objectifs de vente, par mois, par utilisateur (commercial) et par produit (ajouter le canal direct/indirect). Conserver l'historique des objectifs",,0,,,,,,,4,,,,1,1,,2,,8,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des contacts entrants","DÃ©finir une fiche contact",Utilisateur,"Reprendre les champs du formulaire PipeDrive",Base,"0,7",,,,,,,3,,,,,2,,,,5,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion de la facturation","Facturation en deux temps (prestations puis abonnement)",Utilisateur,"Facturation des prestations forfaitisÃ©es (J+1)., puis dans un second temps, aprÃ¨s la rÃ©union de lancement (J+20), une date de livraison est fixÃ©e(M+2), elle sert de date de dÃ©part de l'abonnement et fait l'objet d'une deuxiÃ¨me facturation. L'abonnement est facturÃ© en une seule fois. (Ã©viter 2 bon de commandes)",Projet/Contrat,0,,,,,1,,,,,,1,2,,,,4,
-"Gestion de la facturation","Calculer et afficher la date de paiement prÃ©vue sur la facture",Utilisateur,"Fonction du dÃ©lai annoncÃ©","Account invoice","0,9",,,,,,,1,,,,,,,,,1,
-"Gestion de la facturation","Suivi des relances client",Utilisateur,"Depuis la liste des factures Ã  90 jours  triÃ¨es par montant, possibilitÃ© de visualiser facilement le contact Ã  relancer et suivre l'Ã©tat d'avancement de la relance.",Account_followup,"0,9",,,,,,,1,,,,,1,,,,2,
-"Gestion de la facturation","Facturation globale avec paiements partiels",Utilisateur,"Distinguer les factures partiellement payÃ©es en raison d'un paiement en plusieurs fois (normal) et celles dont le client ne paye pas l'intÃ©gralitÃ© (refus de payer certains services) et devant donc faire l'objet d'une relance.","Account invoice",,,,,,3,,,,,,,,,,,3,
-"Gestion de la facturation","Ventilation (analytique) d'une facturation",Utilisateur,"GÃ©rer la ventilation d'une facture sur une pÃ©riode donnÃ©e (exemple de l'abonnement perÃ§u en une fois et couvrant une pÃ©riode de 6 mois)","Account Analytic","0,9",,,,,,,4,,,,,,,,,4,
-"Gestion de la facturation","CrÃ©ation d'avoirs",Utilisateur,"Mettre Ã  jour les lignes du contrat en fonction d'un avoir",Contrat,"0,7",,,,,,,4,,,,,,,,,4,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des temps passÃ©s","Gestion des marges (temps estimÃ©s et temps passÃ©s)",Utilisateur,"Calculer et afficher la marge (diffÃ©rence entre temps estimÃ© et temps passÃ©), par tÃ¢che, par projet",Projet,0,,4,,,,,2,,,,1,,,,,7,
-"Gestion des temps passÃ©s","Gestion des marges (coÃ»t de revient et coÃ»t facturÃ©)",Utilisateur,"Calculer et afficher la marge (diffÃ©rence cout de revient de la ressource et prix de la prestation facturÃ©e)","TÃ¢che/Time sheet",0,,4,,,,,2,,,,,,,,,6,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion de la relation client / CRM","Historique des Ã©changes",Utilisateur,"Disposer d'un historique complet des Ã©changes avec le clientÂ : appels, mails, rendez vous et des documents projets, propositions...",Partner,"0,1",,,,,,,1,,,,1,1,,,,3,
-"Gestion de la relation client / CRM","Adapter les statuts d'avancement de la vue Kanban (opportunitÃ©s)",Utilisateur,,CRM,"0,7",,,,,,,1,,,,,,,,,1,
-"Gestion de la relation client / CRM","InterfaÃ§age avec Gmail/Google Agenda",Utilisateur,"Investiguer sur l'interfacage possible avec gmail",Email,0,,,,,,,7,,,,,,,,,7,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion du ticketing","Ticketing interne pour lancer la crÃ©ation du compte sur le backoffice iadvize",Utilisateur,"Ouvrir un ticket pour la crÃ©ation du compte client sur la plateforme iadvize",CRM/Message/Contrat,"0,7",,,,,,,2,,,,,1,,,,3,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des clients","Ajouter des tags (etiquettes)",Utilisateur,"Client Web, Client ChassÃ©, Grand compte, moyen compte, petit compte...",Base,1,,,,,,,,,,,,,,,,0,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des rÃ©glements","Lettrage des paiements",Utilisateur,"Lettrage manuel des paiements fonction du relevÃ© de la banque",Account,1,,,,,,,,,,,,,,,,0,
-"Gestion des rÃ©glements","Saisie des rÃ©glements",Utilisateur,"Saisie des rÃ¨glements liÃ©s Ã  une facture",Account,1,,,,,,,,,,,,,,,,0,
-,,,,,,,,,,,,,,,,,,,,,,
-"Gestion des notes de frais","Re facturation des frais de formation",Utilisateur,"Les notes de frais liÃ©es Ã  la formation d'un client lui sont refacturÃ©es. PossibilitÃ© de les attacher Ã  un projet, Ã  un contrat","Expense / Contrat / Projet",0,,,,,,,1,,,,,1,,,,2,
-,,,,,,,,,,,,,,,,,,,,,,
-"Statistiques et reporting","Reporting des crÃ©ances",Utilisateur,"Rapport des crÃ©ances client Ã  la date du jour, puis par Ã©chÃ©ances (entre 0 et 30 jours, de 30 Ã  60 jours, entre 60 et 90 jours, au dela de 90 jours). Tenir compte des paiements partiels (cf.Â : Facturation globale avec paiements partiels)","account invoice",0,,4,,,,,,,,,2,,,,,6,
-"Statistiques et reporting","Paiements de la semaine",Utilisateur,"Rapport des paiements de la semaine",account,0,,2,,,,,,,,,,,,,,2,
-"Statistiques et reporting","Profil Julien / Suivi du rÃ©alisÃ©",,,,0,,,2,2,,,,,,,,,,,,4,
-"Statistiques et reporting","Profil Julien / Suivi du prÃ©visionnel",,,,0,,,3,3,,,,,,,,,,,,6,
-"Statistiques et reporting","Profil Julien / Suivi du pipe new biz",,"AttentionÂ : les chiffres concernant les new biz ne peuvent concerner que les affaires entrantes saisie dans l'ERP. (les donnÃ©es dans le fichiers excel partagÃ© ne sont pas prises en compte)",,0,,,2,2,,,,,,,,,,,,4,
-"Statistiques et reporting","Profil SÃ©bastien / Suivi hebdomadaire",,"Quid du calcul des objectifs globauxÂ : les objectifs affichÃ©s dans ce rapport sont la somme des objectifs individuels attribuÃ©s Ã  chaque commercial.",,0,,,4,3,,,,,,,,,,,,7,
-"Statistiques et reporting","Profil SÃ©bastien / Suivi mensuel",,,,0,,,3,2,,,,,,,,,,,,5,
-"Statistiques et reporting","Profil SÃ©bastiens / Besoins mensuels (non dessinÃ©s pour le moment)",,,,0,,,11,9,,,,,,,,,,,,20,
-"Statistiques et reporting","Profil PS / Taux de rÃ©tention pour le suivi",,"La prestation de suivi est vendue au mois",,0,,,3,3,,,,,,,,,,,,6,
-"Statistiques et reporting","Profil PS / Suivi des marges",,,,0,,,7,4,,,,,,,,,,,,11,
-"Statistiques et reporting","Profil PS / Suivi activitÃ©",,,,0,,,5,5,,,,,,,,,,,,10,
-"Statistiques et reporting","Profil FranÃ§ois / CA rÃ©alisÃ© par partenaire",,,,0,,,3,3,,,,,,,,,,,,6,
-"Statistiques et reporting","Profil FranÃ§ois / CA rÃ©alisÃ©s autres indicateurs",,,,0,,,5,5,,,,,,,,,,,,10,
-"Statistiques et reporting","Tableau des commissions",,,,0,,,4,4,,,,,,,,,,,,8,105
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,"240,5",
+Feature,Story,Type,Description,Modules,Couverture,Licence Module,Analyse fonctionnelle,,,,,,,Analyse technique,,,,,,,Charge
+,,,,,,,Rapports,,,Processus,,Ecrans,,Workflows,,,,,Wizards,,
+,,,,,,,Rapport de base,Référentiel de données,Création du rapport,Base,Avancé,Base,Avancé,Base,Avancé,Droits d'accès (groupes),Objets,Champs calculés,Base,Avancé,
+Multi société,Gestion multi site,Utilisateur,Plusieurs sociétés géographiquement distinctes,openerp,100%,,,,,2,,,,,,,,,,,"2,00"
+Multi société,Gestion d'une centrale d'achat,Utilisateur,Les sociétés filiales passent commandes auprès de la centrale d'achat. La centrale d'achat livre les sociétés filiales.,openerp,100%,,,,,2,,,,,,,,,,,"2,00"
+Multi société,Attribuer une société à un client,Utilisateur,L'approche multi société s'entend sur la gestion des ventes (clients) et de la comptabilité (plan comptable),openerp,100%,,,,,2,,,,,,,,,,,"2,00"
+Multi société,Gestion des stocks,Utilisateur,"Gestion des entrepôts, magasins, emplacements (interne ou partenaires) par société",openerp,100%,,,,,2,,,,,,,,,,,"2,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des stocks,Edition des étiquettes par article,Utilisateur,"Si code barre fournisseur absent, édition d'une étiquette lors de l'entrée en stock.",,0%,,,,8,,,,,,,,,,,,"8,00"
+Gestion des stocks,Gestion des codes EAN128/13,Utilisateur,"Attribution d'un code lot (de type EAN 128) à des livraisons entrantes. Affichage des différents champs caractérisant un code EAN 128. (palette, colis, article, lot, DLUO, DLC)",,0%,,,,,,,7,,,,,7,,,,"14,00"
+Gestion des stocks,Saisie entrée en stock,Utilisateur,Validation des articles reçus par rapport à une commande,stock,100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion des stocks,Gestion des réservations ,Utilisateur,Matériel réservé pour une vente/location et donc plus disponible à la vente,sale rental,50%,,,,,14,,,,,,,,,,,"14,00"
+Gestion des stocks,Gestion des emplacements,Utilisateur,"Gestion des entrepôts, magasins, emplacements (interne ou partenaires)",stock,100%,,,,,4,,,,,,,,,,,"4,00"
+,,,,,,,,,,,,,,,,,,,,,
+"Gestion des achats, appro.",Gestion des commandes d'achat auprès des fournisseurs,Utilisateur,,purchase,100%,,,,,2,,,,,,,,,,,"2,00"
+"Gestion des achats, appro.",Importation des catalogues fournisseurs,Utilisateur,Format standard openERP avec Wizard sélection Fournisseur,product,0%,,,,,2,,2,,,,,,,6,,"10,00"
+"Gestion des achats, appro.",Affichage des commandes (de ventes) débloquées sur réception marchandise en stock,Utilisateur,Vue des BL « en attente de disponibilité » avec couleur différentes pour les BL « débloqués » par réception stock,purchase/sale,0%,,,,,2,,2,2,,,,,,,,"6,00"
+"Gestion des achats, appro.",Achats effectués par une centrale d'achat (filiale du groupe),Utilisateur,Toutes les sociétés filiales ont pour fournisseur la centrale d'achat. Créer les commandes de ventes (dans la centrale) à partir du bon de commande d'achat (de la filiale),purchase/sale,0%,,,,,,6,,,,,,,,,6,"12,00"
+"Gestion des achats, appro.",Réception partielle possible,Utilisateur,,purchase,100%,,,,,2,,,,,,,,,,,"2,00"
+"Gestion des achats, appro.",Edition du bon de réception,Utilisateur,Modèle identique pour chaque filiale,stock,100%,,8,,,,,,,,,,,,,,"8,00"
+"Gestion des achats, appro.",Visualisation du CBN,Utilisateur,Visialisation du CBN à une échéance donnée en s'appuyant sur des volumes de ventes (consommations) passées.,,0%,,7,,,,,7,,,,,4,,7,,"25,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des ventes,Gérer les ventes d'articles en sus d'un contrat de location,Utilisateur,"Dans le cadre d'une location, certains articles peuvent être proposés à la vente. Faire figurer dans le contrat les ventes (bon de commandes/factures). Pouvoir lier une vente (bon de commande) à un contrat de location.",sale,0%,,,,,,,2,,,,,2,,,,"4,00"
+Gestion des ventes,Gestion d'un processus de vente « standard »,Utilisateur,"Devis (rare), bon de commande (par tel/fax), livraison ? Négoce standard",sale,100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion des ventes,Commissionnement des pharmaciens apporteurs d'affaires,Utilisateur,"Cas d'une vente à un client orga. apporté par un pharmacien, générer une liste de commissionnement par apporteur d'affaires. Lier un pharmacien en tant qu'apporteur d'affaire à un contrat. Identifier les contrats déjà commissionnés. Taux et modes de commissionnement seront étudiés dans un second temps",sale_commission,50%,,,,,2,,2,,,,,4,,,,"8,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des clients,Distinguer les clients de type « organisme » et « professionnel »,Utilisateur,"Par exemple, le client pro. est la pharmacie, le client orga. est le particulier (cas de plus en plus rare et limité à de la location de fauteuil roulant).",base (res.partner),0%,,,,,,,1,,,,,"0,5",,,,"1,50"
+Gestion des clients,Saisie des bénéficiaires,Utilisateur,On appelle le bénéficiaire le patient/le particulier qui profite de la location organisme. Reprendre les champs du fichier « ADV_CreationBeneficiaireOrga » dans un onglet « bénéficiaire » de la fiche contact.,base (res.partner),0%,,,,,,,14,,,,,14,,,,"28,00"
+Gestion des clients,Saisie des sous locataires,Utilisateur,On appelle le sous locataire le patient/le particulier qui profite de la location professionnel faite à la pharmacie. Reprendre les champs du fichiers « ADV_CreationSousLocatairePro » dans un onglet « sous locataire » de la fiche contact.,base (res.partner),0%,,,,,,,7,,,,,7,,,,"14,00"
+Gestion des clients,"Typologie client pro. (EHPAD, HAD...)",Utilisateur,"Gérér les catégories (étiquettes) de clients (EHPAD, Pharmacie, Cliniques, Laboratoire...)",base (res.partner),100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion des clients,Gestion des types de contacts,Utilisateur,"Maillage d'acteurs périphériques autour du client. (Infirmier, médecin, famille, Etablissement de santé..). Gérer par les catégories (étiquettes)",base (res.partner),100%,,,,,2,,,,,,,,,,,"2,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion prix,Gestion des tarifs LPP,Utilisateur,Base des prestations/tarifs LPP. Voir http://www.codage.ext.cnamts.fr/codif/tips//telecharge/index_tele.php?p_site=AMELI,,0%,,,,,4,,,,,,,,,,,"4,00"
+Gestion prix,Wizard d'importation des tarifs LPP,Utilisateur,Voir « G5_Changement_tarif_LPP_V1.1 »,,,,,,,2,,6,,,,,,,10,,"18,00"
+Gestion prix,Gestion des listes de prix selon typologie client,Utilisateur,"EHPAD, HAD..",base,100%,,,,,,,,,,,,,,8,,"8,00"
+Gestion prix,Listes de prix LPP OU PRO,Utilisateur,Selon client Orga. Facturé 100%LPP Ou Pro (pharma) facturé X%LPP,base,100%,,,,,4,,,,,,,,,,,"4,00"
+Gestion prix,Unité de ventes variables,,"LPP vendue à la semaine, au jour, au mois avec pour conséquence par exemple une semaine entamée est due.",sale_rental,50%,,,,,4,,4,,,,,4,,,,"12,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des articles / prestations,Ajouts de critères caractérisant un article (vente),Utilisateur,"Exemple : taille, couleur, matière... Voir ( saisie produits WEB )",product,0%,,,,,4,,8,,,,,8,,,,"20,00"
+Gestion des articles / prestations,Gestion de catégorie d'articles (vente),Utilisateur,"Exemple : chambre, déplacement, hygiène... Voir ( saisie produits WEB )",product,100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion des articles / prestations,« Configurateur »  permettant de proposer un article en fonction de critères (vente),Utilisateur,Formulaire de saisie (questionnaire aidé). Voir ( saisie produits WEB ),,0%,,,,,4,,,,,,,,,14,,"18,00"
+Gestion des articles / prestations,Prestations sous traitées (achat),Utilisateur,"Décontamination et contrôle, SAV, réparation. Doit on faire figurer les références des articles sur le bon de commandes fournisseur ? Ou le fournisseur exploite t il directement un emplacement ?",,0%,,,,,2,,,,,,,,,10,,"12,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion de parcs,Créer un emplacement chainé « décontamination & contrôle»,Utilisateur,Processus d'entrée lors de reprise (fin de location) de matériel avant le retour effectif en stock (parc) « disponible »,stock,100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion de parcs,Gérer les mouvements (livraisons/retours) vers et depuis un parc,Utilisateur,"Interface dédiée avec sélection du/des articles, des éventuels sous traitants (décontamination, SAV...)",stock,0%,,,,,,,,,,,,,,10,,"10,00"
+Gestion de parcs,Attribution(saisie) d'un numéro de série à réception/stockage des articles,Utilisateur,Pour les articles faisant l'objet d'une gestion « en série » attribuer les numéros de série lors du mouvement d'entrée en stock parc,stock,0%,,,,,,,,,,,,,,8,,"8,00"
+Gestion de parcs,Wizard d'attribution/désattribution d'articles à un parc,Utilisateur,"Manuellement à court terme, avec interaction possible scan tag RFID, NFC dans un second temps",stock,0%,,,,,,,,,,,,,,8,,"8,00"
+Gestion de parcs,Lier aux immo./amortissements comptables,Utilisateur,Remplacer Sage IMMO puis exporter dans Sage Compta,asset_mangement,80%,,,,,,,5,,,,,5,,,,"10,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des contrats de location,"Gérer les dates de 1ère, début et fin de location",Utilisateur,La date de première location pourra conditionner le tarif,contracts,90%,,,,,2,,1,,,,,1,,,,"4,00"
+Gestion des contrats de location,Gérer la date et mode de livraison souhaitée,Utilisateur,"Le mode de livraison est aujourd'hui assimilé à « matin », « midi », « soir », « nuit »",contracts,0%,,,,,,,1,,,,,1,,,,"2,00"
+Gestion des contrats de location,Gérer la durée d'exploitation du matériel mis à disposition,Utilisateur,La durée d'exploitation réelle du matériel peut différer de la durée de mise à disposition.,contracts,0%,,,,,,,1,,,,,1,,,,"2,00"
+Gestion des contrats de location,Attribuer un bénéficiaire ou un sous locataire à une location,Utilisateur,Tri possible par bénéficiaire ou sous locataire,contracts,0%,,,,,,,2,,,,,2,,,,"4,00"
+Gestion des contrats de location,Statut de commande « bloqué » tant que dossier non complet,Utilisateur,Implémenter un statut spécifique pour identifier les commandes en attente de validation dossier,contracts,0%,,,,,2,,2,,,,,2,,,,"6,00"
+Gestion des contrats de location,Edition d'un courrier « dossier non conforme »,Utilisateur,Courier envoyé au client pour signaler que le dossier n'est pas complet,contracts,0%,,,,4,,,1,,,,,1,,,,"6,00"
+Gestion des contrats de location,Gérer les échanges de matériel,Utilisateur,"On appelle un échange de matériel, le remplacement d'un produit par un autre produit ayant le même LPP. Si le LPP est différent, c'est une reprise de location avec la création d'un nouveau dossier de location. Voir « ADV_Loc_Echange »",contracts,0%,,,,,2,,2,,,,,2,,,,"6,00"
+Gestion des contrats de location,Attribution de sous éléments (accessoires) à une location,Utilisateur,"Interface de saisie des composants d'une location (ex. porte perfusion, repose jambe dans le cas d'un lit médicalisé). Possibilité de modifier les tarifs et d'avoir des tarifs à 0",contracts,0%,,,,,,,6,,,,,3,,,,"9,00"
+Gestion des contrats de location,Planification de livraison de consommable et/ou d'interventions,Utilisateur,"Soins infirmier, livraison nouvelles électrodes jetables... doivent être planifiés (récurrence programmable). Ces interventions ne sont pas à facturer mais représentent des postes de couts.",contracts,0%,,,,,2,,3,,,,,4,,,,"9,00"
+Gestion des contrats de location,Saisir une fin de location,Utilisateur,"Mise à jour des dates, de la facturation, des éventuelles reprises...",contracts,0%,,,,,,,1,,,,,1,,,,"2,00"
+Gestion des contrats de location,Gérer les prêts de matériel,Utilisateur,"Généralement par rapport à un contrat de location, des matériels peuvent être prêtés. Saisir la durée et la raison du prêt. ",contracts,0%,,,,,,,3,,,,,3,,,,"6,00"
+,,,,,,,,,,,,,,,,,,,,,
+Gestion des tournées/livraisons,Planning des livraisons,Utilisateur,Fonction des dates de livraisons souhaitées,stock,100%,,,,,2,,,,,,,,,,,"2,00"
+Gestion des tournées/livraisons,Gestion des livraisons partielles,Utilisateur,Des commandes pourront être partiellement livrées selon les disponibilités des produis en stocks,stock,0%,,,,,,,,,,,,,,,,"0,00"
+Gestion des tournées/livraisons,Edition des bons de livraisons/bon de reprises,Utilisateur,Depuis modèle,stock,0%,,8,,,,,,,,,,,,,,"8,00"
+Gestion des tournées/livraisons,Tournée des sous traitants,Utilisateur,"Dans le cadre de SAV/réparations, tournée de récupération des matériel chez les sous traitants",stock,0%,,,,,,,,,,,,,,8,,"8,00"
+Gestion des tournées/livraisons,Gestion des livraisons consommables,Utilisateur,"Pour un contrat de location donné, différents consommables peuvent être panifiés avec des cadencements différents. Exemple : livrer toutes les semaines des recharges pour le matériel loué",stock/contrat,0%,,,,,,,,,,,,,,8,,"8,00"
+Gestion des tournées/livraisons,Edition d'une tournée,Utilisateur,Depuis modèle,stock,,,,,8,,,,,,,,,,8,,"16,00"
+,,,,,,,,,,,,,,,,,,,,,
+Préparation de commandes,Tri des commandes à préparer,Utilisateur,Fonction des dates souhaitées et des disponibilités en stock,stock,100%,,,,,2,,,,,,,,,,,"2,00"
+Préparation de commandes,Edition des bons de préparation,Utilisateur,Voir dossier « Rapports »,,,,8,,10,,,,,,,,,,,,"18,00"
+,,,,,,,,,,,,,,,,,,,,,
+Interventions de maintenance,Qualification d'une intervention,Utilisateur,"Type (préventive, corrective, livraison consommable), statut, technicien, date, durée, opération...",mro,90%,,,,,,,2,,,,,2,,,,"4,00"
+Interventions de maintenance,Planification d'une intervention,Utilisateur,Pré planifier des intervention fonction d'une récurrence et d'une durée de contrat,mro/contrats,0%,,,,,2,,,,,,,,,8,,"10,00"
+,,,,,,,,,,,,,,,,,,,,,
+Facturation,Possibilité de facturer à un tiers,Utilisateur,"Cas particulier du tiers payeur « Giropharm » pour les articles de négoce. Dans tous les cas, pas de dossiers mixtes.",account invoice,0%,,,,,2,,4,,,,,4,,,,"10,00"
+Facturation,Gérer la facturation des clients via LCR,Utilisateur,Editer la LCR depuis la facture « brouillon » puis validation sous 8 jours sans contestations du client,account invoice,,,,,6,,,2,,,,,2,,,,"10,00"
+Facturation,selection est validation des facture sans contestation,Utilisateur,Interface de selection pour la validation des factures,account invoice,0%,,,,,,,,,,,,,,8,,"8,00"
+Facturation,Facturer au tarif LPP les temps « d'exploitation » et non de mise à disposition du matériel,Utilisateur,"Unité de « consommation » fixée à la semaine pour les LPPs. Sauf exception de la HAD, consommation à la journée.",product,0%,,,,,,,2,,,,,2,,,,"4,00"
+Facturation,Gestion des avoirs ,Utilisateur,Sur une location ou une vente,account invoice,100%,,,,,2,,,,,,,,,,,"2,00"
+Facturation,Saisie des règlements,,,account voucher,100%,,,,,2,,,,,,,,,,,"2,00"
+,,,,,,,,,,,,,,,,,,,,,
+Qualité,Gestion des incidents,Utilisateur,"Horodatage, encodage, archivage des réclamations ",crm claim,100%,,,,,2,,,,,,,,,,,"2,00"
+Qualité,Gestion des contrôles qualités sur produits,Utilisateur,Processus d'entrée en stock conditionné par une étape obligatoire de contrôle qualité,stock,90%,,,,,2,,1,,,,,1,,,,"4,00"
+Qualité,Gestion de la traçabilité des produits et des actions,Utilisateur,"Traçabilité des mouvements de stocks, des interventions/maintenances",stock,0%,,,,,2,,4,,,,,4,,,,"10,00"
+,,,,,,,,,,,,,,,,,,,,,
+Prescription,Saisie (encodage) des ordonnances ,Utilisateur,"Nom prescripteur, date ordo., date validité.. dans le cadre d'un contrat/client orga.",,0%,,,,,2,,4,,,,,4,,,,"10,00"
+,,,,,,,,,,,,,,,,,,,,,
+Interface CPAM/Resopharma,Télé transmission,Utilisateur,"Dans les cas des bénéficiaires (client orga.), l'ordonnance, la feuille de soins et la facture sont transmises à la CPAM(via résopharma). Cette dernière étant le « payeur » d'Handipharm. Développement d'une interface mail pour les télé déclarations",,0%,,,,,38,,12,,,,,29,,27,,"106,00"
+Interface CPAM/Resopharma,Gestion des retours,Utilisateur,Gestion des retours. Rapprochement avec les factures.,,0%,,,,,2,,14,,,,,4,,6,,"26,00"
+,,,,,,,,,,,,,,,,,,,,,
+Export Compta Sage,,,Exporter les écritures comptables vers Sage l100,,0,,,,,2,,4,,,,,4,,,,"10,00"
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,"648,50"
