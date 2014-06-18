@@ -8,6 +8,7 @@
 
 import csv
 import MySQLdb
+import random
 
 class StoriesReader:
 	
@@ -45,7 +46,7 @@ class StoriesReader:
 class MySqlAccess:
 	
 	""" Provide a MySQL access"""
-	def __init__(self,host="projet.sudokeys.com",db_name="icescrum",pwd="37pefhx",un="root",port=3307):
+	def __init__(self,host="localhost",db_name="icescrum",pwd="******",un="root",port=3307):
 		print("Initializing database connection...")
 		self.DB_HOST=host
 		self.DB_NAME=db_name
@@ -138,9 +139,10 @@ class Icescrum:
 		lastInsertedId=0
 		featuresCpt=0
 		storiesCpt=0
+		colorsList=["blue","green","pink","violet","red","orange","gray"]
 		for k in sortedList:
 			if(lastWriteFeature!=k[0]):
-				req = "INSERT INTO icescrum.icescrum2_feature(name,uid,backlog_id,version,color,creation_date,date_created,last_updated,rank,type,value) VALUES(\"%s\",%s,%s,0,\"blue\",NOW(),NOW(),NOW(),%s,0,0)" % (k[0],lastFeatureUid,self.PROJ_REF,lastFeatureUid)
+				req = "INSERT INTO icescrum.icescrum2_feature(name,uid,backlog_id,version,color,creation_date,date_created,last_updated,rank,type,value) VALUES(\"%s\",%s,%s,0,\"%s\",NOW(),NOW(),NOW(),%s,0,0)" % (k[0],lastFeatureUid,self.PROJ_REF,random.choice(colorsList),lastFeatureUid)
 				ret = self.DB_LINK.execute_insert(req)
 				ret = self.DB_LINK.execute_select("""SELECT LAST_INSERT_ID()""")
 				if ret:
@@ -159,7 +161,7 @@ class Icescrum:
 if __name__=="__main__":
 	
 	try:
-		link = MySqlAccess(host="projet.sudokeys.com",db_name="icescrum",pwd="37pefhx",un="root",port=3307)
+		link = MySqlAccess(host="localhost",db_name="icescrum",pwd="*****",un="root",port=3307)
 		icescum = Icescrum(link)
 		icescum.printProjects()
 		ref=raw_input("Type the number of the project to import in : ")
