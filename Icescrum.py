@@ -38,7 +38,7 @@ class StoriesReader:
 		sortedList = self.dicoStoryDescription.keys()
 		sortedList.sort()
 		for k in sortedList:
-			print "|Feature || Story| : |%s || %s| " % (k[0],k[1])
+			print "|Feature || Story| : |%s || %s| " % (k[0].decode("latin-1"),k[1].decode("latin-1"))
 		print "Total lines to write : %s" % len(sortedList)
 
 
@@ -161,7 +161,7 @@ class Icescrum:
 if __name__=="__main__":
 	
 	try:
-		link = MySqlAccess(host="localhost",db_name="icescrum",pwd="*****",un="root",port=3307)
+		link = MySqlAccess(host="projet.sudokeys.com",db_name="icescrum",pwd="37pefhx",un="root",port=3307)
 		icescum = Icescrum(link)
 		icescum.printProjects()
 		ref=raw_input("Type the number of the project to import in : ")
